@@ -1,0 +1,27 @@
+body{
+/*    background:url("https://s2.glbimg.com/M_OIloYX0KQbZ1-EdDQSM7eXPhc=/1200x/smart/filters:cover():strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2022/t/c/0c2a7UQEGOYFGg3dhTxQ/minecraft-the-wild-update-atualizacao-warden.jpg");*/
+    position:center;
+    background-color:rgb(0, 127, 255)!important;
+}
+h1{
+    color:rgb(0, 255, 255)!important;
+    font-family: 'Dancing Script', cursive;
+    font-size:80px!important;
+    text-shadow:5px 5px rgba(0, 0, 0, 0.500);
+}
+#input{
+    margin-top:50px;
+    width:50%;
+    text-shadow:2px 2px rgba(0, 0, 0, 0.500);
+    font-family: 'Dancing Script', cursive;
+    font-size:30px!important;
+    color:rgb(255,0,0) !important;
+}
+#B1{
+    text-shadow:2px 2px rgba(0, 0, 0, 0.500);
+    font-family: 'Dancing Script', cursive;
+    font-size:30px!important;
+}
+::placeholder{
+    color:rgb(255,0,0) !important;
+}
