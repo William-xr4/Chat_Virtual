@@ -15,19 +15,24 @@
     <body>
         <center>
             <h1 class="fw-bold bg-primary bg-gradient shadow mb-5 rounded">Chat Virtual</h1>
+            <button class="btn text-primary fw-bold bg-danger bg-gradient shadow mb-5 rounded"onclick="Logout()" id="B2">Logout</button>
+            <br>
+            <br>
             <br>
             <div class="border border-danger w-50 bg-info bg-gradient shadow mb-5 rounded">
                 <br>
                 <br>
-                <input type="text"id="inputname"class="form-control"placeholder="Escreva o nome do(a) usuário(a) aqui!">
+                <input type="text"id="inputname"class="form-control"placeholder="Escreva o nome da sala aqui!">
                 <br>
                 <hr>
                 <br>
-                <button class="btn text-danger fw-bold bg-primary bg-gradient shadow mb-5 rounded"onclick="Logar()" id="B1">Logar</button>
+                <button class="btn text-danger fw-bold bg-primary bg-gradient shadow mb-5 rounded"onclick="Adicionar_sala()" id="B1">Adicionar Sala</button>
                 <br>
                 <br>
+                <h3>Sala(s)</h3>
+                <div id="output"></div>
             </div>
         </center>
-        <script src="main.js"></script>
+        <script src="main2.js"></script>
     </body>
 </html>
