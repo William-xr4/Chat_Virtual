@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/live/3.1/firebase.js"></script>
         <link href="style.css"rel="stylesheet">
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -29,7 +32,7 @@
                 <button class="btn text-danger fw-bold bg-primary bg-gradient shadow mb-5 rounded"onclick="Adicionar_sala()" id="B1">Adicionar Sala</button>
                 <br>
                 <br>
-                <h3>Sala(s)</h3>
+                <h3 id="Sala">Sala(s)</h3>
                 <div id="output"></div>
             </div>
         </center>

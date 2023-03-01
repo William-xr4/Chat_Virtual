@@ -33,3 +33,30 @@ h1{
     margin-right:10px !important;
     margin-bottom:100px !important;
 }
+#Sala{
+    text-shadow:2px 2px rgba(0, 0, 0, 0.500);
+    font-family: 'Dancing Script', cursive;
+    font-size:30px!important;
+}
+#output{
+    text-shadow:2px 2px rgba(0, 0, 0, 0.500);
+    font-family: 'Dancing Script', cursive;
+    font-size:30px!important;
+}
+#h3{
+    text-shadow:2px 2px rgba(0, 0, 0, 0.500);
+    font-family: 'Dancing Script', cursive;
+    font-size:30px!important;
+}
+#B3{
+    text-shadow:2px 2px rgba(0, 0, 0, 0.500);
+    font-family: 'Dancing Script', cursive;
+    font-size:30px!important;
+    margin-right:10px !important;
+    margin-bottom:10px !important;
+}
+#h4{
+    text-shadow:2px 2px rgba(0, 0, 0, 0.500);
+    font-family: 'Dancing Script', cursive;
+    font-size:30px!important;
+}

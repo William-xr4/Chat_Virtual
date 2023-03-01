@@ -10,15 +10,24 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 
-var Username=localStorage.getItem("userName")
+var Username=localStorage.getItem("userName");
+var Roomname=localStorage.getItem("Sala");
 
 function Pegar_Dado(){
-  firebase.database().ref("/").on("value", function(snapshot){
+  firebase.database().ref("/"+Roomname).on("value", function(snapshot){
     document.getElementById("output").innerHTML="";
     snapshot.forEach(function(childSnapshot){
       var childKey=childSnapshot.key;
-      var Salas =childKey;
-      var box ='<div class="room_name" id='+Salas+' onclick="Redirecionar_para_a_sala(this.id)"> #'+Salas+'</div><hr>';
+      var childData=childSnapshot.val();
+      if(childKey!="purpose"){
+        var Id_da_Mensagem=childKey;
+        var Dado_da_Mensagem=childData;
+        var Nome=Dado_da_Mensagem["name"];
+        var Mensagem=Dado_da_Mensagem["message"];
+        var Like=Dado_da_Mensagem["like"];
+
+        var Tag_do_nome='<h4 id="h4" class="fw-bold bg-primary bg-gradient shadow mb-5 rounded">'+Nome+'<img src="tick.png"><h4>'
+      }
       document.getElementById("output").innerHTML+=box;
     });
   });
