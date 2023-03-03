@@ -13,6 +13,16 @@ firebase.initializeApp(firebaseConfig);
 var Username=localStorage.getItem("userName");
 var Roomname=localStorage.getItem("Sala");
 
+function Enviar_Mensagem(){
+  var mensagem=document.getElementById("inputname").value;
+  firebase.database().ref(Roomname).push({
+    Name:Username,
+    Message:mensagem,
+    Like:0
+  });
+  mensagem="";
+}
+
 function Pegar_Dado(){
   firebase.database().ref("/"+Roomname).on("value", function(snapshot){
     document.getElementById("output").innerHTML="";
@@ -22,23 +32,19 @@ function Pegar_Dado(){
       if(childKey!="purpose"){
         var Id_da_Mensagem=childKey;
         var Dado_da_Mensagem=childData;
-        var Nome=Dado_da_Mensagem["name"];
-        var Mensagem=Dado_da_Mensagem["message"];
-        var Like=Dado_da_Mensagem["like"];
+        var Nome=Dado_da_Mensagem["Name"];
+        var Mensagem=Dado_da_Mensagem["Message"];
+        var Like=Dado_da_Mensagem["Like"];
 
-        var Tag_do_nome='<h4 id="h4" class="fw-bold bg-primary bg-gradient shadow mb-5 rounded">'+Nome+'<img src="tick.png"><h4>'
+        var Tag_do_nome='<h4 id="h4" class="fw-bold bg-primary bg-gradient shadow mb-5 rounded">'+Nome+'<img src="tick.png" id="tick"><h4>'
+        var Tag_menssagem='<h4 id="h4_2" class="fw-bold bg-primary bg-gradient shadow mb-5 rounded">'+Mensagem+'</h4>';
+        var Tag_like='<button class="btn text-danger fw-bold bg-primary bg-gradient shadow mb-5 rounded" id="'+Id_da_Mensagem+'" value="'+Like+'" onclick=Like(this.id)>';
+        var Tag_span='<span class="border border-danger w-50 bg-info bg-gradient shadow mb-5 rounded" > Like: '+Like+'</span></button><hr>';
+        var box= Tag_do_nome+Tag_menssagem+Tag_like+Tag_span;
+        document.getElementById("output").innerHTML+=box;
       }
-      document.getElementById("output").innerHTML+=box;
     });
   });
-}
-function Adicionar_sala(){
-    var Sala = document.getElementById("inputname").value;
-    firebase.database().ref("/").child(Sala).update({
-      purpose:"Adicionando sala"
-    });
-    localStorage.setItem("Sala", Sala);
-    window.location="index3.html";
 }
 Pegar_Dado();
 function Redirecionar_para_a_sala(nome_da_sala){
@@ -50,4 +56,12 @@ function Logout(){
   localStorage.removeItem("userName");
   localStorage.removeItem("Sala");
   window.location="index.html";
+}
+function Like(Id_da_Mensagem){
+  var Id_do_Botao=Id_da_Mensagem;
+  var Likes=document.getElementById(Id_do_Botao).value;
+  var Atualiza_Like=Number(Likes)+1;
+  firebase.database().ref(Roomname).child(Id_da_Mensagem).update({
+    Like:Atualiza_Like
+  });
 }

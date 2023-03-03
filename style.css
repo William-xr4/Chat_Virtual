@@ -60,3 +60,11 @@ h1{
     font-family: 'Dancing Script', cursive;
     font-size:30px!important;
 }
+#tick{
+    width: 30px;
+}
+#h4_2{
+    text-shadow:2px 2px rgba(0, 0, 0, 0.500);
+    font-family: 'Dancing Script', cursive;
+    font-size:30px!important;
+}
